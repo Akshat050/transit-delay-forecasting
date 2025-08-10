@@ -32,8 +32,8 @@ Visit our live demo: [DelaySenseAI Streamlit Cloud](https://delaysenseai.streaml
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/delaysenseai.git
-   cd delaysenseai
+   git clone https://github.com/Akshat050/transit-delay-forecasting.git
+   cd transit-delay-forecasting
    ```
 
 2. **Install dependencies**
@@ -63,7 +63,7 @@ Visit our live demo: [DelaySenseAI Streamlit Cloud](https://delaysenseai.streaml
 ## 📁 Project Structure
 
 ```
-delaysenseai/
+transit-delay-forecasting/
 ├── main.py                 # Main orchestration script
 ├── data_processor.py      # GTFS data processing and feature engineering
 ├── delay_predictor.py     # ML model training and prediction
@@ -98,83 +98,46 @@ The system generates comprehensive reports including:
 - Transfer reliability assessments
 - Model performance metrics
 - Calibration curves and SHAP explanations
-- CSV exports for further analysis
 
-## 🔧 Configuration
+## 🔧 Development
 
-### Model Parameters
-- **Risk Threshold**: Adjustable threshold for high-risk classification (0.1-0.9)
-- **Model Type**: Choose between XGBoost and LightGBM
-- **Calibration**: Automatic probability calibration for reliable predictions
+### Prerequisites
+- Python 3.11+
+- GTFS data files
+- Required Python packages (see requirements.txt)
 
-### Data Processing
-- **Memory Optimization**: Efficient handling of large GTFS datasets
-- **Feature Engineering**: Automatic creation of 50+ predictive features
-- **Quality Checks**: Robust error handling for inconsistent GTFS data
-
-## 🌐 Deployment Options
-
-### Streamlit Cloud (Recommended)
-1. Fork this repository
-2. Connect to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Deploy automatically from GitHub
-
-### Heroku
-1. Add `setup.sh` and `Procfile` (included)
-2. Deploy using Heroku CLI or GitHub integration
-
-### Docker
+### Installation
 ```bash
-docker build -t delaysenseai .
-docker run -p 8501:8501 delaysenseai
+# Clone the repository
+git clone https://github.com/Akshat050/transit-delay-forecasting.git
+cd transit-delay-forecasting
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+streamlit run dashboard.py
 ```
 
 ## 📈 Performance
 
-- **Training Time**: ~5-10 minutes for typical GTFS datasets
-- **Prediction Speed**: <100ms per trip prediction
-- **Memory Usage**: Optimized for datasets up to 1M+ records
-- **Accuracy**: 85%+ on balanced datasets with proper calibration
+The system provides:
+- **Real-time predictions** with <100ms latency
+- **High accuracy** with AUC-PR > 0.85
+- **Scalable architecture** supporting large transit networks
+- **Interactive visualizations** for data exploration
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### Development Setup
-```bash
-git clone https://github.com/yourusername/delaysenseai.git
-cd delaysenseai
-pip install -r requirements-dev.txt
-pre-commit install
-```
-
-## 📝 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- Built with [Streamlit](https://streamlit.io/) for the web interface
-- Powered by [XGBoost](https://xgboost.ai/) for machine learning
-- Uses [Folium](https://python-visualization.github.io/folium/) for interactive maps
-- Inspired by real-world transit challenges
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/delaysenseai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/delaysenseai/discussions)
-- **Email**: your.email@example.com
-
-## 🔮 Roadmap
-
-- [ ] Real-time AVL data integration
-- [ ] Weather and event impact analysis
-- [ ] Mobile app for riders
-- [ ] API endpoints for third-party integration
-- [ ] Multi-city deployment support
-
----
-
-**Made with ❤️ for better transit systems everywhere**
-
-[Star this repo](https://github.com/yourusername/delaysenseai) if you find it useful! 
+- GTFS specification for transit data standards
+- Streamlit for the web application framework
+- XGBoost for the machine learning algorithm
+- Open-source community for various supporting libraries
